@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Installation Page</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+  <div class="background-animation"></div>
+  <div class="content">
+    <h1>Welcome to My App Installation Page</h1>
+    <p>Please click the button below to download and install the app:</p>
+    <a class="download-button" href="https://github.com/cMardc/ContactsApp/releases/download/APK/Contacts.apk" download>Download App</a>
+
+    <div class="app-info">
+      <button class="toggle-button" onclick="toggleInfo()">+</button>
+      <h2>What is Contacts App?</h2>
+      <ul id="app-info-list">
+        <li>It's an app that allows you to save your contacts and their numbers.</li>
+        <li>You can edit names and numbers in your contact list.</li>
+        <li>Your data is securely stored within the app.</li>
+        <li>The app efficiently manages and stores your data with almost no limits.</li>
+        <li>The app is coded in Flutter, with every error fixed.</li>
+        <li>It does not connect to any external database or network.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function toggleInfo() {
+      var infoList = document.getElementById("app-info-list");
+      var toggleButton = document.querySelector(".toggle-button");
+
+      if (infoList.style.maxHeight) {
+        infoList.style.maxHeight = null;
+        toggleButton.innerText = "+";
+        toggleButton.classList.remove("show-info");
+      } else {
+        infoList.style.maxHeight = infoList.scrollHeight + "px";
+        toggleButton.innerText = "-";
+        toggleButton.classList.add("show-info");
+      }
+    }
+  </script>
+</body>
+
+</html>

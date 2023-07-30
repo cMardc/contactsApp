@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
+  
+  .background-animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff5e7f, #65d3e3);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    z-index: -1;
+  }
+  
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+  }
+  
+  h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .download-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #fff;
+    color: #ff5e7f;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .download-button:hover {
+    background-color: #ff5e7f;
+    color: #fff;
+  }
+  
+.app-info {
+    margin-top: 50px;
+  }
+  
+  h2 {
+    font-size: 24px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  li {
+    font-size: 18px;
+    padding-left: 25px;
+    position: relative;
+  }
+  
+  li:before {
+    content: "\2022";
+    position: absolute;
+    left: 0;
+    top: 5px;
+  }
+  
+  .show-info ul {
+    max-height: 300px; /* Adjust the max-height to control the expanding height */
+  }
+  
+  .show-info .toggle-button {
+    transform: rotate(180deg);
+  }
+  
+  .toggle-button {
+    display: inline-block;
+    background-color: transparent; /* Change the background color to transparent */
+    color: #ff5e7f;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Add additional styling for the download button hover effect */
+  .download-button:hover {
+    background-color: #ff5e7f;
+    color: #fff;
+    transform: scale(1.1);
+  }
+  
+  /* ... (existing styles) */
+  
