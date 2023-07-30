@@ -71,6 +71,9 @@ body {
   }
   
   ul {
+    border-style: dashed;
+    border-radius: 20px;
+    border-color: rgba(72, 52, 54, 30);
     list-style: none;
     padding: 0;
     margin: 20px 0;
@@ -101,6 +104,9 @@ body {
   }
   
   .toggle-button {
+    border-style: double;
+    border-color: black;
+    border-width: 12px;
     display: inline-block;
     background-color: transparent; /* Change the background color to transparent */
     color: #ff5e7f;

@@ -1,3 +1,4 @@
+import 'package:contacts/main.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -47,10 +48,13 @@ class _showInfoState extends State<showInfo> {
               sharedPrefs myPrefs = sharedPrefs();
               myPrefs.init();
               myPrefs.setPref(widget.contacts);
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext context) {
+                return const rootPage();
+              }));
             } catch (e) {
               debugPrint(e.toString());
             }
-            Navigator.of(context).pop();
           },
           child: const Icon(Icons.minimize),
         ),
@@ -80,6 +84,10 @@ class _showInfoState extends State<showInfo> {
                     sharedPrefs myPref = sharedPrefs();
                     myPref.init();
                     myPref.setPref(widget.contacts);
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (BuildContext context) {
+                      return const rootPage();
+                    }));
                   } catch (e) {
                     debugPrint(e.toString());
                   }

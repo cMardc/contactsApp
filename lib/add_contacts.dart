@@ -1,3 +1,4 @@
+import 'package:contacts/main.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -54,10 +55,17 @@ class _AddContactPageState extends State<AddContactPage> {
       String newContact = '$name : $phone';
       setState(() {
         widget.contacts.add(newContact);
+        // ignore: non_constant_identifier_names
+        List<String> ReversedList;
+        ReversedList = widget.contacts.reversed.toList();
         try {
           sharedPrefs myPrefs = sharedPrefs();
           myPrefs.init();
-          myPrefs.setPref(widget.contacts);
+          myPrefs.setPref(ReversedList);
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (BuildContext context) {
+            return const rootPage();
+          }));
         } catch (e) {
           debugPrint(e.toString());
         }
