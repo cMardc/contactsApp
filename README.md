@@ -5,7 +5,6 @@
 <h2>A Very Basic Mobile App That Made With Flutter.</h2>
 <a href="https://cmardc.github.io/contactsApp/">Installation page</a>
 <h3>APK File Is Located At : <pre>build/app/outputs/flutter-apk/app-release.apk</pre></h3>
-<h3>Source files are located at: <pre>lib</pre></h3>
 <hr>
 <h3>Android build:  <pre>$ flutter build apk</pre></h3>
 <h3>IOS build:      <pre>$ flutter build ipa</pre></h3>
