@@ -13,6 +13,12 @@
 <h3>MacOS build:    <pre>$ flutter build macos</pre></h3>
 <h3>Web build:      <pre>$ flutter build web</pre></h3>
 <hr>
+<h3>Screenshots: </h3>
+<img href="img/Main_Page_Blue.png">
+<img href="img/Add_Page_Red.png">
+<img href="img/Edit_Page_Cyan.png">
+<img href="img/Main_Page_Green.png">
+<hr>
 <h3>Made by ~cM</h3>
 <a href="https://discord.gg/5W4XtHkc6g">Discord</a>
 <a href="https://github.com/cMardc">Github</a>
