@@ -1,8 +1,6 @@
 # Contacts
 
-<div>
-    <img src="example.svg" width="400" height="400" alt="css-in-readme">
-</div>
+
 
 <h2>A Very Basic Mobile App That Made With Flutter.</h2><br>
 <h2>Installation: <pre>https://cmardc.github.io/contactsApp/</pre></h2><br>
