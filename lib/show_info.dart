@@ -1,6 +1,7 @@
 import 'package:contacts/main.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart' as urllauncher;
 
 // ignore: camel_case_types
 class sharedPrefs {
@@ -29,6 +30,22 @@ class showInfo extends StatefulWidget {
 
   @override
   State<showInfo> createState() => _showInfoState();
+}
+
+String extractNumbersAfterColon(String inputString) {
+  // Find the location of the first ':'
+  int colonIndex = inputString.indexOf(':');
+
+  // If the ':' is not found or it's the last character, return an empty string
+  if (colonIndex == -1 || colonIndex == inputString.length - 1) {
+    return '';
+  }
+
+  // Extract the substring after ':' and remove all non-digit characters
+  String resultString =
+      inputString.substring(colonIndex + 1).replaceAll(RegExp(r'[^0-9]'), '');
+
+  return resultString;
 }
 
 // ignore: camel_case_types
@@ -93,6 +110,15 @@ class _showInfoState extends State<showInfo> {
                   }
                 },
                 child: const Text('Submit'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  String num =
+                      extractNumbersAfterColon(widget.contacts[widget.index]);
+                  final Uri phoneUri = Uri(scheme: "tel", path: num);
+                  urllauncher.launchUrl(phoneUri);
+                },
+                child: const Icon(Icons.call_made_rounded),
               )
             ],
           ),

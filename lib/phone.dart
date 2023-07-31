@@ -13,6 +13,10 @@ class Phone extends StatefulWidget {
   _PhoneState createState() => _PhoneState();
 }
 
+void sortListAlphabetically(List<String> list) {
+  list.sort((a, b) => a.compareTo(b));
+}
+
 class _PhoneState extends State<Phone> {
   @override
   Widget build(BuildContext context) {
@@ -27,6 +31,7 @@ class _PhoneState extends State<Phone> {
                     .push(MaterialPageRoute(builder: (BuildContext context) {
                   return showInfo(contacts: widget.myList, index: index);
                 }));
+                sortListAlphabetically(widget.myList);
                 showInfo(contacts: widget.myList, index: index);
               });
             },

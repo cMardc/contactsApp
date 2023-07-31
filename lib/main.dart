@@ -1,8 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'add_contacts.dart';
 import 'phone.dart';
-import 'dart:math' as math;
 
 // ignore: camel_case_types
 class sharedPrefs {
@@ -20,6 +21,10 @@ class sharedPrefs {
   List<String> getPref() {
     return preferences.getStringList('contlist') ?? [];
   }
+}
+
+void sortListAlphabetically(List<String> list) {
+  list.sort((a, b) => a.compareTo(b));
 }
 
 Future<void> main() async {
@@ -62,8 +67,9 @@ class _rootPageState extends State<rootPage>
     with SingleTickerProviderStateMixin {
   AnimationController? _controller;
   int page = 0;
-  //SharedPreferences pref = SharedPreferences.getInstance();
   List<String> contacts = [];
+  bool isRefreshing =
+      false; // Step 1: Add a boolean to track the refresh status
 
   @override
   void initState() {
@@ -94,23 +100,16 @@ class _rootPageState extends State<rootPage>
     } catch (e) {
       debugPrint(e.toString());
     }
+    sortListAlphabetically(contacts);
     List<Widget> bodies = [
       Phone(myList: contacts),
       AddContactPage(contacts: contacts)
     ];
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Contacts'),
-        /*
-        leading: IconButton(
-            onPressed: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (BuildContext context) {
-                return const rootPage();
-              }));
-            },
-            icon: const Icon(Icons.refresh)),
-            */
+        backgroundColor: Colors.cyan,
         leading: GestureDetector(
           onTap: () {
             Navigator.of(context)
@@ -118,17 +117,6 @@ class _rootPageState extends State<rootPage>
               return const rootPage();
             }));
           },
-          /*
-          child: RotationTransition(
-            turns: const AlwaysStoppedAnimation(0),
-            child: IconButton(
-              onPressed: () {
-                _controller!.repeat();
-              },
-              icon: const Icon(Icons.refresh),
-            ),
-          ),
-          */
           child: AnimatedBuilder(
               animation: _controller!,
               builder: (context, child) {
@@ -136,9 +124,14 @@ class _rootPageState extends State<rootPage>
                     turns: _controller!,
                     child: IconButton(
                       onPressed: () {
+                        setState(() {
+                          isRefreshing = true;
+                        });
                         _controller!.repeat();
                         Future.delayed(
-                            const Duration(seconds: 1), stopAnimation);
+                          const Duration(seconds: 1),
+                          stopAnimation,
+                        );
                       },
                       icon: const Icon(Icons.refresh),
                     ));

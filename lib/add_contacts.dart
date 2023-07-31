@@ -48,6 +48,10 @@ class _AddContactPageState extends State<AddContactPage> {
     super.dispose();
   }
 
+  void sortListAlphabetically(List<String> list) {
+    list.sort((a, b) => a.compareTo(b));
+  }
+
   void _addContact() {
     String name = nameController.text;
     String phone = phoneController.text;
@@ -58,6 +62,7 @@ class _AddContactPageState extends State<AddContactPage> {
         // ignore: non_constant_identifier_names
         List<String> ReversedList;
         ReversedList = widget.contacts.reversed.toList();
+        sortListAlphabetically(ReversedList);
         try {
           sharedPrefs myPrefs = sharedPrefs();
           myPrefs.init();
