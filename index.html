@@ -11,22 +11,28 @@
 <body>
   <div class="background-animation"></div>
   <div class="content">
-    <h1>Welcome to My App Installation Page</h1>
+    <pre id="main">Contacts</pre>
+    <h1>Welcome to installation page!</h1>
     <p>Please click the button below to download and install the app:</p>
     <a class="download-button" href="Contacts.apk" download>Download App</a>
 
     <div class="app-info">
-      <button class="toggle-button" onclick="toggleInfo()">+</button>
+      <button class="toggle-button" onclick="toggleInfo()">Info</button>
       <h2>What is Contacts App?</h2>
-      <ul id="app-info-list">
-        <li>It's an app that allows you to save your contacts and their numbers.</li>
-        <li>You can edit names and numbers in your contact list.</li>
-        <li>Your data is securely stored within the app.</li>
-        <li>The app efficiently manages and stores your data with almost no limits.</li>
-        <li>The app is coded in Flutter, with every error fixed.</li>
-        <li>It does not connect to any external database or network.</li>
+      <ul id="app-info-list"><br>
+        <li>It's an app that allows you to save your contacts and their numbers.</li><hr>
+        <li>You can edit names and numbers in your contact list.</li><hr>
+        <li>Your data is securely stored within the app.</li><hr>
+        <li>The app efficiently manages and stores your data with almost no limits.</li><hr>
+        <li>The app is coded in Flutter, with every error fixed.</li><hr>
+        <li>It does not connect to any external database or network.</li><hr><hr><br>
+        <a href="https://discord.gg/5W4XtHkc6g" class="link">Discord</a>
+        <a href="https://github.com/cMardc" class="link">Github</a>
+        <br>
+        <br>
       </ul>
     </div>
+    
   </div>
 
   <script>
@@ -36,15 +42,12 @@
 
       if (infoList.style.maxHeight) {
         infoList.style.maxHeight = null;
-        toggleButton.innerText = "+";
         toggleButton.classList.remove("show-info");
       } else {
         infoList.style.maxHeight = infoList.scrollHeight + "px";
-        toggleButton.innerText = "-";
         toggleButton.classList.add("show-info");
       }
     }
   </script>
 </body>
-
 </html>

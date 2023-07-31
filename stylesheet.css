@@ -64,7 +64,7 @@ body {
   
 .app-info {
     margin-top: 50px;
-  }
+}
   
   h2 {
     font-size: 24px;
@@ -83,9 +83,11 @@ body {
   }
   
   li {
-    font-size: 18px;
+    font-size: 23px;
     padding-left: 25px;
     position: relative;
+    color: rgb(226, 222, 220);
+    font: 1.2em sans-serif;
   }
   
   li:before {
@@ -104,14 +106,17 @@ body {
   }
   
   .toggle-button {
-    border-style: double;
+    
     border-color: black;
     border-width: 12px;
     display: inline-block;
     background-color: transparent; /* Change the background color to transparent */
     color: #ff5e7f;
     font-size: 20px;
-    border: none;
+    border-style: outset;
+    border-width: 2px;
+    border-color: rgba(51, 206, 167, 0.712);
+    border-radius: 10px;
     outline: none;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -124,5 +129,35 @@ body {
     transform: scale(1.1);
   }
   
-  /* ... (existing styles) */
   
+.link {
+  font-size: large;
+  color: rgb(224, 188, 188);
+  border-style: ridge;
+  border-radius: 10px;
+  border-style: double;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-variant-ligatures: normal;
+  border-color: rgba(23, 168, 125, 0.466);
+  color: rgba(164, 187, 218, 0.856);
+  font-style: normal;
+}
+
+#main  {
+  font-size: 50px;
+  color: antiquewhite;
+  border-top-style: inset;
+  border-top-color: rgb(110, 155, 145);
+  border-radius: 20px;
+  border-bottom-style: ridge;
+  border-bottom-color: rgb(180, 120, 162);
+  text-decoration-skip-ink: auto;
+  text-decoration-color: aquamarine;
+}
+
+.toggle-button:hover {
+  background-color: #ff5e7f;
+  color:rgba(164, 187, 218, 0.856);
+  transform: scale(1.1);
+}
