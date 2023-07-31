@@ -14,16 +14,9 @@
 <h3>Web build:      <pre>$ flutter build web</pre></h3>
 <hr>
 <h3>Screenshots: </h3>
-<!--
-![Preview](https://github.com/cMardc/contactsApp/blob/main/img/Main_Page_Blue.png)
-![Preview](https://github.com/cMardc/contactsApp/blob/main/img/Add_Page_Red.png)
-![Preview](https://github.com/cMardc/contactsApp/blob/main/img/Edit_Page_Cyan.png)
-![Preview](https://github.com/cMardc/contactsApp/blob/main/img/Main_Page_Green.png)
--->
-<img src="img/Main_Page_Blue.png" alt="Alt text" title="Optional title">
-<img src="img/Add_Page_Red.png" alt="Alt text" title="Optional title">
-<img src="img/Edit_Page_Cyan.png" alt="Alt text" title="Optional title">
-<img src="img/Main_Page_Green.png" alt="Alt text" title="Optional title">
+<img src="img/Main_Page_Blue.png" alt="Alt text" title="Main page (Blue)">
+<img src="img/Add_Page_Red.png" alt="Alt text" title="Add contact page (Red)">
+<img src="img/Edit_Page_Cyan.png" alt="Alt text" title="Edit contact page (Cyan)">
 <hr>
 <h3>Made by ~cM</h3>
 <a href="https://discord.gg/5W4XtHkc6g">Discord</a>
