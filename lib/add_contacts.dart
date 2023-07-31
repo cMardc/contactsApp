@@ -1,24 +1,31 @@
+//add_contacts.dart file
+
 import 'package:contacts/main.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+//Create a shared preferences class to store user data
 // ignore: camel_case_types
 class sharedPrefs {
   static late SharedPreferences preferences;
 
+  //Init method to start
   Future<void> init() async {
     preferences = await SharedPreferences.getInstance();
   }
 
+  //Setting contacts list to 'contlist' tag on memory
   Future<void> setPref(List<String> input) async {
     preferences = await SharedPreferences.getInstance();
     preferences.setStringList('contlist', input);
   }
 
+  //Get contacts list with tag 'contlist'
   List<String> getPref() {
     return preferences.getStringList('contlist') ?? [];
   }
 
+  //Set color on memory with 'clr' tag
   Future<void> setClr(Color input) async {
     preferences = await SharedPreferences.getInstance();
     if (input == Colors.cyan) {
@@ -36,6 +43,7 @@ class sharedPrefs {
     }
   }
 
+  //Get color from memory with 'clr' tag
   Color getClr() {
     int val = preferences.getInt('clr') ?? 0;
     if (val == 0) {
@@ -54,6 +62,7 @@ class sharedPrefs {
   }
 }
 
+//AddContactPage class as stateful-widget
 class AddContactPage extends StatefulWidget {
   final List<String> contacts;
 
@@ -64,6 +73,7 @@ class AddContactPage extends StatefulWidget {
   _AddContactPageState createState() => _AddContactPageState();
 }
 
+//_AddContactPageState
 class _AddContactPageState extends State<AddContactPage> {
   late TextEditingController nameController;
   late TextEditingController phoneController;

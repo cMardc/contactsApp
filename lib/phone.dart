@@ -1,26 +1,32 @@
-// ignore_for_file: unused_field
+//phone.dart file
 
+//Import packages that will be used
 import 'package:flutter/material.dart';
 import 'show_info.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+//Create a shared preferences class to store user data
 // ignore: camel_case_types
 class sharedPrefs {
   static late SharedPreferences preferences;
 
+  //Init method to start
   Future<void> init() async {
     preferences = await SharedPreferences.getInstance();
   }
 
+  //Setting contacts list to 'contlist' tag on memory
   Future<void> setPref(List<String> input) async {
     preferences = await SharedPreferences.getInstance();
     preferences.setStringList('contlist', input);
   }
 
+  //Get contacts list with tag 'contlist'
   List<String> getPref() {
     return preferences.getStringList('contlist') ?? [];
   }
 
+  //Set color on memory with 'clr' tag
   Future<void> setClr(Color input) async {
     preferences = await SharedPreferences.getInstance();
     if (input == Colors.cyan) {
@@ -38,6 +44,7 @@ class sharedPrefs {
     }
   }
 
+  //Get color from memory with 'clr' tag
   Color getClr() {
     int val = preferences.getInt('clr') ?? 0;
     if (val == 0) {
@@ -56,6 +63,7 @@ class sharedPrefs {
   }
 }
 
+//phone class (stateful-widget)
 class Phone extends StatefulWidget {
   final List<String> myList;
 
@@ -66,36 +74,27 @@ class Phone extends StatefulWidget {
   _PhoneState createState() => _PhoneState();
 }
 
+//Sort list in alphabetical order
 void sortListAlphabetically(List<String> list) {
   list.sort((a, b) => a.compareTo(b));
 }
 
-/*
-Add This To Body Of Returned Scaffold : 
-ElevatedButton(
-            onPressed: () {
-              try {
-                sharedPrefs myPrefs = sharedPrefs();
-                myPrefs.setClr(Colors.red);
-                debugPrint(myPrefs.getClr().toString());
-              } catch (e) {
-                debugPrint(e.toString());
-              }
-            },
-            child: const Text('Red'),
-          );
-          
-*/
+//_PhoneState widget To Update Screen
 class _PhoneState extends State<Phone> {
+  //Index for contacts
   int index = 0;
-  Color backgroundColor = Colors.cyan; // Initialize with a default color
+
+  // Initialize with a default color
+  Color backgroundColor = Colors.cyan;
 
   @override
+  //Loading preferences
   void initState() {
     super.initState();
     _loadPreferences();
   }
 
+  //load function
   Future<void> _loadPreferences() async {
     try {
       sharedPrefs myPrefs = sharedPrefs();
@@ -128,8 +127,10 @@ class _PhoneState extends State<Phone> {
           );
         },
       ),
+      //Change color button
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          //try to change color
           try {
             index += 1;
             List<MaterialColor> colors = [
@@ -154,9 +155,11 @@ class _PhoneState extends State<Phone> {
             debugPrint(e.toString());
           }
         },
+        //Color icon
         child: const Icon(Icons.color_lens),
       ),
-      backgroundColor: backgroundColor, // Set the background color here
+      // Set the background color
+      backgroundColor: backgroundColor,
     );
   }
 }
