@@ -19,6 +19,40 @@ class sharedPrefs {
   List<String> getPref() {
     return preferences.getStringList('contlist') ?? [];
   }
+
+  Future<void> setClr(Color input) async {
+    preferences = await SharedPreferences.getInstance();
+    if (input == Colors.cyan) {
+      preferences.setInt('clr', 0);
+    } else if (input == Colors.yellow) {
+      preferences.setInt('clr', 1);
+    } else if (input == Colors.red) {
+      preferences.setInt('clr', 2);
+    } else if (input == Colors.green) {
+      preferences.setInt('clr', 3);
+    } else if (input == Colors.blue) {
+      preferences.setInt('clr', 4);
+    } else {
+      preferences.setInt('clr', 0);
+    }
+  }
+
+  Color getClr() {
+    int val = preferences.getInt('clr') ?? 0;
+    if (val == 0) {
+      return Colors.cyan;
+    } else if (val == 1) {
+      return Colors.yellow;
+    } else if (val == 2) {
+      return Colors.red;
+    } else if (val == 3) {
+      return Colors.green;
+    } else if (val == 4) {
+      return Colors.blue;
+    } else {
+      return Colors.cyan;
+    }
+  }
 }
 
 // ignore: camel_case_types, must_be_immutable

@@ -21,10 +21,40 @@ class sharedPrefs {
   List<String> getPref() {
     return preferences.getStringList('contlist') ?? [];
   }
-}
 
-void sortListAlphabetically(List<String> list) {
-  list.sort((a, b) => a.compareTo(b));
+  Future<void> setClr(Color input) async {
+    preferences = await SharedPreferences.getInstance();
+    if (input == Colors.cyan) {
+      preferences.setInt('clr', 0);
+    } else if (input == Colors.yellow) {
+      preferences.setInt('clr', 1);
+    } else if (input == Colors.red) {
+      preferences.setInt('clr', 2);
+    } else if (input == Colors.green) {
+      preferences.setInt('clr', 3);
+    } else if (input == Colors.blue) {
+      preferences.setInt('clr', 4);
+    } else {
+      preferences.setInt('clr', 0);
+    }
+  }
+
+  Color getClr() {
+    int val = preferences.getInt('clr') ?? 0;
+    if (val == 0) {
+      return Colors.cyan;
+    } else if (val == 1) {
+      return Colors.yellow;
+    } else if (val == 2) {
+      return Colors.red;
+    } else if (val == 3) {
+      return Colors.green;
+    } else if (val == 4) {
+      return Colors.blue;
+    } else {
+      return Colors.cyan;
+    }
+  }
 }
 
 Future<void> main() async {
@@ -93,10 +123,13 @@ class _rootPageState extends State<rootPage>
 
   @override
   Widget build(BuildContext context) {
+    Color backgroundColor = Colors.cyan;
     try {
       sharedPrefs myPref = sharedPrefs();
       myPref.init();
       contacts = myPref.getPref();
+      myPref.init();
+      backgroundColor = myPref.getClr();
     } catch (e) {
       debugPrint(e.toString());
     }
@@ -109,7 +142,7 @@ class _rootPageState extends State<rootPage>
     return Scaffold(
       appBar: AppBar(
         title: const Text('Contacts'),
-        backgroundColor: Colors.cyan,
+        backgroundColor: backgroundColor,
         leading: GestureDetector(
           onTap: () {
             Navigator.of(context)
