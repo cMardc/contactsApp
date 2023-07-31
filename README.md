@@ -14,10 +14,12 @@
 <h3>Web build:      <pre>$ flutter build web</pre></h3>
 <hr>
 <h3>Screenshots: </h3>
-<img href="img/Main_Page_Blue.png">
-<img href="img/Add_Page_Red.png">
-<img href="img/Edit_Page_Cyan.png">
-<img href="img/Main_Page_Green.png">
+<p align="center">
+    <img href="img/Main_Page_Blue.png">
+    <img href="img/Add_Page_Red.png">
+    <img href="img/Edit_Page_Cyan.png">
+    <img href="img/Main_Page_Green.png">
+</p>
 <hr>
 <h3>Made by ~cM</h3>
 <a href="https://discord.gg/5W4XtHkc6g">Discord</a>
