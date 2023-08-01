@@ -13,6 +13,9 @@
 
 <h3>You can easily download .apk file from our webpage.</h3>
 <a href="https://cmardc.github.io/contactsApp/">Download Page</a>
+
+<hr>
+<h2>Build And Run</h2>
 <img src="img/BashCMD.png" alt="Alt text" title="Build And Run">
 
 <hr>
