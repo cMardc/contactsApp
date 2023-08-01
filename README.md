@@ -3,10 +3,6 @@
 ![Static Badge](https://img.shields.io/badge/Language-Flutter(Dart)-blue)
 ![GitHub all releases](https://img.shields.io/github/downloads/cMardc/contactsApp/total)
 
-
-<img src="https://img.shields.io/badge/Language-Flutter(Dart)-blue" align="center" alt="Alt text" title="GIF From App">
-<img src="https://img.shields.io/github/downloads/cMardc/contactsApp/total" align="center" alt="Alt text" title="GIF From App">
-
 <h3>A Very Basic Mobile App That Made With Flutter.</h3>
 <img src="img/togif.gif" align="center" alt="Alt text" title="GIF From App">
 
