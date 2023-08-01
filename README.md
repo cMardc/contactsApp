@@ -46,7 +46,7 @@
 <h4>But it's always better to make code better. Let's create a class that will handle these for us: </h4>
 <img src="img/sharedprefsclass.png" align="center" alt="Alt text" title="Class Example">
 <h4>But, this can give us error sometimes. For example, if we don't set a value for tag 'name' and try to get it, this will give us an error. So, it's preferred to use it in a try & catch block: </h4>
-<img src="img/sharedprefsclass.png" align="center" alt="Alt text" title="Try & Catch Example">
+<img src="img/trypref.png" align="center" alt="Alt text" title="Try & Catch Example">
 
 
 <hr>
