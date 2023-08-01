@@ -47,6 +47,11 @@
 <img src="img/sharedprefsclass.png" align="center" alt="Alt text" title="Class Example">
 <h4>But, this can give us error sometimes. For example, if we don't set a value for tag 'name' and try to get it, this will give us an error. So, it's preferred to use it in a try & catch block: </h4>
 <img src="img/trypref.png" align="center" alt="Alt text" title="Try & Catch Example">
+<h4>Other important thing that helped me build this app is <a href="https://pub.dev/packages/url_launcher"> url launcher package</a>. This package allows us to redirect user to different pages.</h4>
+<h4>Now, you maybe asked that why do i need to send user to a website? Actually, i don't. This package can redirect to different apps on mobile. The One I Used is <pre>tel</pre>. This tag redirects to phone app in mobile devices which user can call the number of contact.</h4>
+<h4>Here's an example: </h4>
+<img src="img/urlExample.png" align="center" alt="Alt text" title="URL launcher example">
+
 
 
 <hr>
