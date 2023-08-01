@@ -12,8 +12,7 @@
 <hr>
 <h2>Installation</h2>
 
-<h3>You can easily download .apk file from our webpage.</h3>
-<a href="https://cmardc.github.io/contactsApp/">Download page</a>
+<h3>You can easily download .apk file from our <a href="https://cmardc.github.io/contactsApp/">download page</a>.</h3>
 
 <hr>
 <h2>Build And Run</h2>
