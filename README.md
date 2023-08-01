@@ -53,7 +53,7 @@
 <img src="img/urlExample.png" align="center" alt="Alt text" title="URL launcher example">
 <h4>Now, in app we can see that contacts are stored like : '$(name) + " : " + $(number)'. So, we'll have to extract number from that string: </h4>
 <img src="img/extractNumber.png" align="center" alt="Alt text" title="URL launcher example">
-
+<h4>See <a href="doc/api/search.html">full documentation</a></h4>
 
 
 <hr>
