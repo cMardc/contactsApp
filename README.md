@@ -17,6 +17,16 @@
 <hr>
 <h2>Build And Run</h2>
 <img src="img/BashCMD.png" alt="Alt text" title="Build And Run">
+<hr>
+
+<h2>Features</h2>
+- It's an app that allows you to save your contacts and their numbers.
+- You can edit names and numbers in your contact list.
+- Your data is securely stored within the app.
+- The app efficiently manages and stores your data with almost no limits.
+- The app is coded in Flutter, with every error fixed.
+- It does not connect to any external database or network.
+
 
 <hr>
 <h4>Screenshots: </h4>
