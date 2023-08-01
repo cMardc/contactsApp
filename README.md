@@ -42,9 +42,11 @@
 <h4>As we discussed before, this app saves user data on their local device. The data app stores are list of contacts and background color.</h4>
 <h4>This is made with <a href="https://pub.dev/packages/shared_preferences">shared preferences package</a>. This package allows developers to store data in local device.</h4>
 <h4>Let's look at an example here: </h4>
-<img src="img/sharedprefs.png" align="center" alt="Alt text" title="Edit contact page (Cyan)">
+<img src="img/sharedprefs.png" align="center" alt="Alt text" title="Shared Preferences Example">
 <h4>But it's always better to make code better. Let's create a class that will handle these for us: </h4>
-<img src="img/sharedprefsclass.png" align="center" alt="Alt text" title="Edit contact page (Cyan)">
+<img src="img/sharedprefsclass.png" align="center" alt="Alt text" title="Class Example">
+<h4>But, this can give us error sometimes. For example, if we don't set a value for tag 'name' and try to get it, this will give us an error. So, it's preferred to use it in a try & catch block: </h4>
+<img src="img/sharedprefsclass.png" align="center" alt="Alt text" title="Try & Catch Example">
 
 
 <hr>
