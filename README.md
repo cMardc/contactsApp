@@ -32,15 +32,17 @@
 
 
 <hr>
-<h4>Screenshots</h4>
+<h2>Screenshots</h2>
 <img src="img/Main_Page_Blue.png" align="center" alt="Alt text" title="Main page (Blue)">
 <img src="img/Add_Page_Red.png" align="center" alt="Alt text" title="Add contact page (Red)">
 <img src="img/Edit_Page_Cyan.png" align="center" alt="Alt text" title="Edit contact page (Cyan)">
 <hr>
 
 <h2>How it works</h2>
-
-
+<h4>As we discussed before, this app saves user data on their local device. The data app stores are list of contacts and background color.</h4>
+<h4>This is made with <a href="https://pub.dev/packages/shared_preferences">shared preferences package</a>. This package allows developers to store data in local device.</h4>
+<h4>Let's look at an example here: </h4>
+<img src="img/sharedprefs.png" align="center" alt="Alt text" title="Edit contact page (Cyan)">
 
 <hr>
 <h4>Made by ~cM</h4>
