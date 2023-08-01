@@ -20,12 +20,14 @@
 <hr>
 
 <h2>Features</h2>
-- It's an app that allows you to save your contacts and their numbers.
-- You can edit names and numbers in your contact list.
-- Your data is securely stored within the app.
-- The app efficiently manages and stores your data with almost no limits.
-- The app is coded in Flutter, with every error fixed.
-- It does not connect to any external database or network.
+<ul>
+<li>It's an app that allows you to save your contacts and their numbers.</li>
+<li>You can edit names and numbers in your contact list.</li>
+<li>Your data is securely stored within the app.</li>
+<li>The app efficiently manages and stores your data with almost no limits.</li>
+<li>The app is coded in Flutter, with every error fixed.</li>
+<li>It does not connect to any external database or network.</li>
+<li>It saves your data on your own device</li>
 
 
 <hr>
