@@ -4,6 +4,7 @@
 
 <h2>A Very Basic Mobile App That Made With Flutter.</h2>
 <a href="https://cmardc.github.io/contactsApp/">Installation page</a>
+<h2>To Run Project: <pre>$ flutter run</pre></h2>
 <hr>
 <h3>Android build:  <pre>$ flutter build apk</pre></h3>
 <h3>IOS build:      <pre>$ flutter build ipa</pre></h3>

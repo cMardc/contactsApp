@@ -1,32 +1,24 @@
-//phone.dart file
-
-//Import packages that will be used
 import 'package:flutter/material.dart';
 import 'show_info.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-//Create a shared preferences class to store user data
 // ignore: camel_case_types
 class sharedPrefs {
   static late SharedPreferences preferences;
 
-  //Init method to start
   Future<void> init() async {
     preferences = await SharedPreferences.getInstance();
   }
 
-  //Setting contacts list to 'contlist' tag on memory
   Future<void> setPref(List<String> input) async {
     preferences = await SharedPreferences.getInstance();
     preferences.setStringList('contlist', input);
   }
 
-  //Get contacts list with tag 'contlist'
   List<String> getPref() {
     return preferences.getStringList('contlist') ?? [];
   }
 
-  //Set color on memory with 'clr' tag
   Future<void> setClr(Color input) async {
     preferences = await SharedPreferences.getInstance();
     if (input == Colors.cyan) {
@@ -44,7 +36,6 @@ class sharedPrefs {
     }
   }
 
-  //Get color from memory with 'clr' tag
   Color getClr() {
     int val = preferences.getInt('clr') ?? 0;
     if (val == 0) {
@@ -63,7 +54,6 @@ class sharedPrefs {
   }
 }
 
-//phone class (stateful-widget)
 class Phone extends StatefulWidget {
   final List<String> myList;
 
@@ -74,33 +64,27 @@ class Phone extends StatefulWidget {
   _PhoneState createState() => _PhoneState();
 }
 
-//Sort list in alphabetical order
 void sortListAlphabetically(List<String> list) {
   list.sort((a, b) => a.compareTo(b));
 }
 
-//_PhoneState widget To Update Screen
 class _PhoneState extends State<Phone> {
-  //Index for contacts
   int index = 0;
-
-  // Initialize with a default color
   Color backgroundColor = Colors.cyan;
+  List<String> filteredList = [];
 
   @override
-  //Loading preferences
   void initState() {
     super.initState();
     _loadPreferences();
   }
 
-  //load function
   Future<void> _loadPreferences() async {
     try {
       sharedPrefs myPrefs = sharedPrefs();
       await myPrefs.init();
       backgroundColor = myPrefs.getClr();
-      setState(() {}); // To trigger a rebuild after preferences are loaded
+      setState(() {});
     } catch (e) {
       debugPrint(e.toString());
     }
@@ -109,28 +93,54 @@ class _PhoneState extends State<Phone> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.builder(
-        itemCount: widget.myList.length,
-        itemBuilder: (context, index) {
-          return ElevatedButton(
-            onPressed: () {
-              setState(() {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (BuildContext context) {
-                  return showInfo(contacts: widget.myList, index: index);
-                }));
-                sortListAlphabetically(widget.myList);
-                showInfo(contacts: widget.myList, index: index);
-              });
-            },
-            child: Text(widget.myList[index]),
-          );
-        },
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              onChanged: (value) {
+                setState(() {
+                  filteredList = widget.myList
+                      .where((name) =>
+                          name.toLowerCase().contains(value.toLowerCase()))
+                      .toList();
+                });
+              },
+              decoration: const InputDecoration(
+                hintText: 'Search...',
+              ),
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: filteredList.isEmpty
+                  ? widget.myList.length
+                  : filteredList.length,
+              itemBuilder: (context, index) {
+                final String contactName = filteredList.isEmpty
+                    ? widget.myList[index]
+                    : filteredList[index];
+
+                return ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (BuildContext context) {
+                          return showInfo(
+                              contacts: widget.myList, index: index);
+                        },
+                      ),
+                    );
+                  },
+                  child: Text(contactName),
+                );
+              },
+            ),
+          ),
+        ],
       ),
-      //Change color button
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          //try to change color
           try {
             index += 1;
             List<MaterialColor> colors = [
@@ -138,7 +148,7 @@ class _PhoneState extends State<Phone> {
               Colors.yellow,
               Colors.red,
               Colors.green,
-              Colors.blue
+              Colors.blue,
             ];
             sharedPrefs myPrefs = sharedPrefs();
             if (index < colors.length) {
@@ -155,10 +165,8 @@ class _PhoneState extends State<Phone> {
             debugPrint(e.toString());
           }
         },
-        //Color icon
         child: const Icon(Icons.color_lens),
       ),
-      // Set the background color
       backgroundColor: backgroundColor,
     );
   }
