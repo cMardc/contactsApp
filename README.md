@@ -51,6 +51,8 @@
 <h4>Now, you maybe asked that why do i need to send user to a website? Actually, i don't. This package can redirect to different apps on mobile. The One I Used is 'tel'. This tag redirects to phone app in mobile devices which user can call the number of contact.</h4>
 <h4>Here's an example: </h4>
 <img src="img/urlExample.png" align="center" alt="Alt text" title="URL launcher example">
+<h4>Now, in app we can see that contacts are stored like : '$(name) + " : " + $(number)'. So, we'll have to extract number from that string: </h4>
+<img src="img/extractNumber.png" align="center" alt="Alt text" title="URL launcher example">
 
 
 
