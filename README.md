@@ -1,6 +1,5 @@
 
 <img src="img/logo.png" align="center" alt="Alt text" title="Logo">
-<h1>Contacts</h1>
 
 ![Static Badge](https://img.shields.io/badge/Language-Flutter(Dart)-blue)
 ![GitHub all releases](https://img.shields.io/github/downloads/cMardc/contactsApp/total)
