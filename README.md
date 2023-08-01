@@ -43,6 +43,9 @@
 <h4>This is made with <a href="https://pub.dev/packages/shared_preferences">shared preferences package</a>. This package allows developers to store data in local device.</h4>
 <h4>Let's look at an example here: </h4>
 <img src="img/sharedprefs.png" align="center" alt="Alt text" title="Edit contact page (Cyan)">
+<h4>But it's always better to make code better. Let's create a class that will handle these for us: </h4>
+<img src="img/sharedprefsclass.png" align="center" alt="Alt text" title="Edit contact page (Cyan)">
+
 
 <hr>
 <h4>Made by ~cM</h4>

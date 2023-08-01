@@ -19,7 +19,7 @@ class sharedPrefs {
 
   //Setting contacts list to 'contlist' tag on memory
   Future<void> setPref(List<String> input) async {
-    preferences = await SharedPreferences.getInstance();
+    //preferences = await SharedPreferences.getInstance();
     preferences.setStringList('contlist', input);
   }
 
